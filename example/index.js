@@ -25,6 +25,8 @@ var volumeInput = document.getElementById('volume');
 var rateInput = document.getElementById('rate');
 var pitchInput = document.getElementById('pitch');
 
+// Speak Synthesis Status
+var isSpoke = false;
 
 // Fetch the list of voices and populate the voice options.
 function loadVoices() {
@@ -76,6 +78,10 @@ function speak(text) {
 
     // Queue this utterance.
     window.speechSynthesis.speak(msg);
+
+    // change the button word and status
+    button.innerText = isSpoke ? 'Pause' : 'Speak';
+    isSpoke = !isSpoke;
 }
 
 
@@ -90,18 +96,18 @@ button.addEventListener('click', function (e) {
 // No Sleep section
 var noSleep = new NoSleep();
 var wakeLockEnabled = false;
-var toggleEl = document.querySelector("#nosleep");
-var statusDisplay = document.querySelector("#statusDisplay");
+var toggleEl = document.getElementById('nosleep');
+var statusDisplay = document.getElementById('statusDisplay');
 toggleEl.addEventListener('click', function () {
     if (!wakeLockEnabled) {
         noSleep.enable(); // keep the screen on!
         wakeLockEnabled = true;
-        statusDisplay.innerHTML = 'enabled';
+        statusDisplay.innerText = 'enabled';
         // document.body.style.backgroundColor = "green";
     } else {
         noSleep.disable(); // let the screen turn off.
         wakeLockEnabled = false;
-        statusDisplay.innerHTML = 'disabled';
+        statusDisplay.innerText = 'disabled';
         // document.body.style.backgroundColor = "";
     }
 }, false);
