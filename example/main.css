@@ -13,7 +13,8 @@ html {
 }
 
 #page-wrapper {
-    width: 640px;
+    max-width: 640px;
+    width: 100%;
     background: #FFFFFF;
     padding: 1em;
     margin: 1em auto;
@@ -34,7 +35,7 @@ h1 {
     color: #CC0000;
 }
 
-input[type="text"] {
+#speech-msg {
     width: 100%;
     padding: 0.5em;
     font-size: 1.2em;
@@ -44,7 +45,8 @@ input[type="text"] {
 }
 
 input[type="range"] {
-    width: 300px;
+    max-width: 450px;
+    width: 70%;
 }
 
 label {
@@ -82,6 +84,59 @@ button:focus {
 button:active {
     opacity: 1;
     box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.1) inset;
+}
+
+#audio-player {
+    width: 100%;
+    background-image: linear-gradient(64deg, rgb(69, 206, 83, 0.6), #69c773);
+    box-sizing: border-box;
+    position: relative;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.1);
+}
+#audio-player .title{
+    text-align: center;
+    width: 100%;
+    font-size: 24px;
+    padding: 10px;
+    color: white;
+}
+#audio-player .functionBar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 4px;
+}
+#audio-player .button {
+    display: inline-block;
+    border-radius: 50%;
+}
+#audio-player .button:active{
+    background-color: #69c773;
+}
+
+#playList {
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.1);
+}
+#playList .list {
+    list-style: none;
+    padding-left: 0px;
+    margin: 0px;
+}
+#playList .item {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    font-size: 20px;
+    padding-left: 10px;
+}
+#playList .item div {
+    display: inline-block;
+}
+#playList .item .index {
+    width: 20px;
 }
 
 #status {

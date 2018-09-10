@@ -10,13 +10,12 @@
 </head>
 <body>
     <div id="page-wrapper">
-        <h1>Web Speech Synthesis with NoSleep Demo</h1>
-        <div id="status">Wake Lock is <span id="statusDisplay">disabled</span></div>
+        <h1>Web Speech Synthesis Demo</h1>
         
         <p id="msg"></p>
     
-        <input type="text" name="speech-msg" id="speech-msg" x-webkit-speech>
-    
+        <!-- <input type="text" name="speech-msg" id="speech-msg" x-webkit-speech> -->
+        <textarea name="text" id="speech-msg" cols="30" rows="10"></textarea>
         <div class="option">
             <label for="voice">Voice</label>
             <select name="voice" id="voice"></select>
@@ -33,12 +32,46 @@
             <label for="pitch">Pitch</label>
             <input type="range" min="0" max="2" step="0.1" name="pitch" id="pitch" value="1">
         </div>
-    
-        <button id="speak">Speak</button>
-        <button id="nosleep">NoSleep</button>
-        
 
-        <script src="../dist/NoSleep.min.js"></script>
+        <button id="addToList">Add into List</button>
+        <button id="repeat">Repeat</button>
+        
+        <div id="audio-player">
+            <div class="title">Audio Player</div>
+            <div class="progressBar"></div>
+            <div class="functionBar">
+                <div class="button" id="prev"><img src="./img/prev.png" alt="prev"></div>
+                <div class="button" id="prev-15sec"><img src="./img/prev-15sec.png" alt="prev-15sec"></div>
+                <div class="button" id="play"><img src="./img/orb-play@2x.png" alt="play"></div>
+                <div class="button" id="next-15sec"><img src="./img/next-15sec.png" alt="next-15sec"></div>
+                <div class="button" id="next"><img src="./img/next.png" alt="next"></div>
+            </div>
+        </div>
+        <div id="playList">
+            <ul class="list">
+                <li class="item">
+                    <div class="index">1</div>
+                    <div class="title">示威？美媒：川普擬派航艦再穿台海</div>
+                </li>
+                <li class="item">
+                    <div class="index">2</div>
+                    <div class="title">名字堅持用羅馬拼音 Kolas Yotaka：...</div>
+                </li>
+                <li class="item">
+                    <div class="index">3</div>
+                    <div class="title">最新 ! 馬被控大巨蛋案圖利 獲簽結</div>
+                </li>
+                <li class="item">
+                    <div class="index">4</div>
+                    <div class="title">兆元產業門戶大開？ 學者籲國產化培育...</div>
+                </li>
+                <li class="item">
+                    <div class="index">5</div>
+                    <div class="title">退休金沒著落？萬元生存金年年領到老！</div>
+                </li>
+            </ul>
+        </div>
+
         <script src="index.js"></script>
     </div>
 </body>
